@@ -231,6 +231,15 @@ section h2 {
     line-height: 1.5;
 }
 
+.contact-info a {
+    color: #0c5c4b;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
 .contact-form {
     background: #f8f9fa;
     padding: 1.5rem;
