@@ -19,7 +19,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#clients">Clients</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#portfolio" id="portfolioLink">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -101,97 +101,14 @@
             </div>
         </section>
 
-        <!-- PORTFOLIO GALLERY WITH YOUR 14 IMAGES -->
-        <section id="portfolio" class="portfolio">
+        <!-- PORTFOLIO SECTION - Hidden until button clicked -->
+        <section id="portfolio" class="portfolio" style="display: none;">
             <div class="container">
                 <h2>Our Embroidery Portfolio</h2>
                 <p class="portfolio-subtitle">See some of our amazing embroidery work</p>
                 
-                <div class="portfolio-gallery">
-                    <div class="gallery-item">
-                        <img src="1.jpeg" alt="Embroidery Work 1" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Custom Logo Embroidery</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="2.png" alt="Embroidery Work 2" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>School Uniform Embroidery</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="3.png" alt="Embroidery Work 3" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Corporate Branding</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="4.jpeg" alt="Embroidery Work 4" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Construction Workwear</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="5.jpeg" alt="Embroidery Work 5" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Sports Team Logo</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="6.jpeg" alt="Embroidery Work 6" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Custom Design</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="7.jpeg" alt="Embroidery Work 7" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Jacket Embroidery</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="8.jpeg" alt="Embroidery Work 8" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Cap Embroidery</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="9.png" alt="Embroidery Work 9" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Bag Embroidery</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="10.jpeg" alt="Embroidery Work 10" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Polo Shirt Logo</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="11.png" alt="Embroidery Work 11" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Team Uniform</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="12.png" alt="Embroidery Work 12" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Workwear Embroidery</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="13.png" alt="Embroidery Work 13" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Corporate Gift</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="14.jpeg" alt="Embroidery Work 14" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span>Custom Order</span>
-                        </div>
-                    </div>
+                <div class="portfolio-gallery" id="portfolioGallery">
+                    <!-- Images will be loaded dynamically when portfolio button is clicked -->
                 </div>
             </div>
         </section>
@@ -264,7 +181,7 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#portfolio" id="footerPortfolioLink">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -289,30 +206,120 @@
     </div>
 
     <script>
-        // Lightbox functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.querySelector('.close');
-        
-        document.querySelectorAll('.gallery-img').forEach(img => {
-            img.addEventListener('click', function() {
-                lightbox.style.display = 'flex';
-                lightboxImg.src = this.src;
+        // Portfolio images data
+        const portfolioImages = [
+            { src: "1.jpeg", title: "Custom Logo Embroidery" },
+            { src: "2.png", title: "School Uniform Embroidery" },
+            { src: "3.png", title: "Corporate Branding" },
+            { src: "4.jpeg", title: "Construction Workwear" },
+            { src: "5.jpeg", title: "Sports Team Logo" },
+            { src: "6.jpeg", title: "Custom Design" },
+            { src: "7.jpeg", title: "Jacket Embroidery" },
+            { src: "8.jpeg", title: "Cap Embroidery" },
+            { src: "9.png", title: "Bag Embroidery" },
+            { src: "10.jpeg", title: "Polo Shirt Logo" },
+            { src: "11.png", title: "Team Uniform" },
+            { src: "12.png", title: "Workwear Embroidery" },
+            { src: "13.png", title: "Corporate Gift" },
+            { src: "14.jpeg", title: "Custom Order" }
+        ];
+
+        let portfolioLoaded = false;
+
+        // Function to load portfolio images
+        function loadPortfolio() {
+            if (portfolioLoaded) return;
+            
+            const gallery = document.getElementById('portfolioGallery');
+            if (!gallery) return;
+            
+            gallery.innerHTML = '';
+            
+            portfolioImages.forEach(image => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                
+                const img = document.createElement('img');
+                img.src = image.src;
+                img.alt = image.title;
+                img.className = 'gallery-img';
+                img.loading = 'lazy';
+                
+                const overlay = document.createElement('div');
+                overlay.className = 'gallery-overlay';
+                overlay.innerHTML = `<span>${image.title}</span>`;
+                
+                galleryItem.appendChild(img);
+                galleryItem.appendChild(overlay);
+                gallery.appendChild(galleryItem);
             });
-        });
-        
-        closeBtn.addEventListener('click', function() {
-            lightbox.style.display = 'none';
-        });
-        
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) {
+            
+            portfolioLoaded = true;
+            
+            // Re-attach lightbox events to new images
+            attachLightboxEvents();
+        }
+
+        // Lightbox functionality
+        function attachLightboxEvents() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.querySelector('.close');
+            
+            document.querySelectorAll('.gallery-img').forEach(img => {
+                img.removeEventListener('click', handleImageClick);
+                img.addEventListener('click', handleImageClick);
+            });
+            
+            function handleImageClick(e) {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = e.target.src;
+            }
+            
+            if (closeBtn) {
+                closeBtn.removeEventListener('click', closeLightbox);
+                closeBtn.addEventListener('click', closeLightbox);
+            }
+            
+            if (lightbox) {
+                lightbox.removeEventListener('click', closeOnBackgroundClick);
+                lightbox.addEventListener('click', closeOnBackgroundClick);
+            }
+            
+            function closeLightbox() {
                 lightbox.style.display = 'none';
             }
+            
+            function closeOnBackgroundClick(e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                }
+            }
+        }
+
+        // Show portfolio section and load images when Portfolio button is clicked
+        function showPortfolio() {
+            const portfolioSection = document.getElementById('portfolio');
+            if (portfolioSection) {
+                portfolioSection.style.display = 'block';
+                portfolioSection.scrollIntoView({ behavior: 'smooth' });
+                loadPortfolio();
+            }
+        }
+
+        // Add click event listeners to both Portfolio links
+        document.getElementById('portfolioLink')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPortfolio();
+        });
+        
+        document.getElementById('footerPortfolioLink')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPortfolio();
         });
 
-        // Smooth scrolling for navigation
-        document.querySelectorAll('nav a, .hero-buttons a').forEach(anchor => {
+        // Smooth scrolling for other navigation links
+        document.querySelectorAll('nav a:not(#portfolioLink), .hero-buttons a, .footer-section a:not(#footerPortfolioLink)').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href && href.startsWith('#')) {
