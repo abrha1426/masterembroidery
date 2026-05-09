@@ -38,9 +38,16 @@ header .container {
     position: relative;
 }
 
+/* Logo with Blue Text on the Right */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .logo-img {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #ffd700;
@@ -53,6 +60,27 @@ header .container {
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
 }
 
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3b82f6;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.logo-subtitle {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+}
+
+/* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
     font-size: 28px;
@@ -550,6 +578,10 @@ footer {
     cursor: pointer;
 }
 
+.close:hover {
+    color: white;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .mobile-menu-btn {
@@ -584,6 +616,19 @@ footer {
     nav ul li a {
         display: block;
         padding: 12px;
+    }
+    
+    .logo-img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .logo-title {
+        font-size: 0.9rem;
+    }
+    
+    .logo-subtitle {
+        font-size: 0.55rem;
     }
     
     .hero h1 {
@@ -628,6 +673,19 @@ footer {
     .btn {
         padding: 0.7rem 1.2rem;
         font-size: 0.85rem;
+    }
+    
+    .logo-title {
+        font-size: 0.75rem;
+    }
+    
+    .logo-subtitle {
+        font-size: 0.5rem;
+    }
+    
+    .logo-img {
+        width: 40px;
+        height: 40px;
     }
 }
 
