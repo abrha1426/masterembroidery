@@ -8,7 +8,7 @@ body {
     font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: #1a1a1a;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4a0e2e 0%, #1a0a14 100%);
     min-height: 100vh;
 }
 
@@ -18,15 +18,15 @@ body {
     padding: 0 20px;
 }
 
-/* Header - Purple Gradient */
+/* Header - Burgundy Theme */
 header {
-    background: linear-gradient(135deg, #5a2d8c 0%, #3a1c61 100%);
+    background: linear-gradient(135deg, #5c132e 0%, #3a0b1d 100%);
     color: white;
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 header .container {
@@ -36,7 +36,7 @@ header .container {
     flex-wrap: wrap;
 }
 
-/* CIRCLE LOGO - YOUR REAL IMAGE */
+/* CIRCLE LOGO - Burgundy Borders */
 .logo {
     display: flex;
     align-items: center;
@@ -47,15 +47,15 @@ header .container {
     height: 65px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid #ff6b9d;
-    box-shadow: 0 0 20px rgba(255,107,157,0.5);
+    border: 3px solid #d4af37;
+    box-shadow: 0 0 20px rgba(212,175,55,0.3);
     transition: all 0.3s ease;
 }
 
 .logo-img:hover {
     transform: scale(1.08);
-    border-color: #ffd700;
-    box-shadow: 0 0 30px rgba(255,215,0,0.6);
+    border-color: #c9a02e;
+    box-shadow: 0 0 30px rgba(212,175,55,0.5);
 }
 
 /* Navigation */
@@ -81,7 +81,7 @@ nav a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background: #ff6b9d;
+    background: #d4af37;
     transition: width 0.3s;
 }
 
@@ -90,12 +90,12 @@ nav a:hover::after {
 }
 
 nav a:hover {
-    color: #ff6b9d;
+    color: #d4af37;
 }
 
-/* Hero Section - Vibrant Gradient */
+/* Hero Section - Burgundy Gradient */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background: linear-gradient(135deg, #801b3a 0%, #4a0e2e 50%, #2c081c 100%);
     color: white;
     padding: 5rem 0;
     text-align: center;
@@ -110,7 +110,7 @@ nav a:hover {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%);
     animation: rotate 20s linear infinite;
 }
 
@@ -160,7 +160,7 @@ nav a:hover {
     animation: fadeInUp 1.4s ease;
 }
 
-/* ATTRACTIVE BUTTONS */
+/* ATTRACTIVE BUTTONS - Burgundy Theme */
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
@@ -196,15 +196,15 @@ nav a:hover {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #ff6b9d, #ffd700);
-    color: #1a1a1a;
-    box-shadow: 0 5px 20px rgba(255,107,157,0.4);
+    background: linear-gradient(135deg, #d4af37, #b8962c);
+    color: #2c081c;
+    box-shadow: 0 5px 20px rgba(212,175,55,0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(255,107,157,0.6);
-    color: white;
+    box-shadow: 0 8px 30px rgba(212,175,55,0.6);
+    color: #2c081c;
 }
 
 .btn-whatsapp {
@@ -225,14 +225,14 @@ section {
 }
 
 section:nth-child(even) {
-    background: linear-gradient(135deg, #f5f0ff 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #fff5f8 0%, #ffffff 100%);
 }
 
 section h2 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 3rem;
-    color: #5a2d8c;
+    color: #5c132e;
     position: relative;
 }
 
@@ -244,7 +244,7 @@ section h2::after {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, #ff6b9d, #ffd700);
+    background: linear-gradient(90deg, #d4af37, #b8962c);
     border-radius: 2px;
 }
 
@@ -259,16 +259,16 @@ section h2::after {
     background: white;
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(92,19,46,0.08);
     transition: all 0.4s ease;
     text-align: center;
-    border: 1px solid rgba(90,45,140,0.1);
+    border: 1px solid rgba(92,19,46,0.1);
 }
 
 .service-card:hover, .category:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(90,45,140,0.2);
-    border-color: #ff6b9d;
+    box-shadow: 0 20px 40px rgba(92,19,46,0.15);
+    border-color: #d4af37;
 }
 
 .service-icon {
@@ -279,16 +279,11 @@ section h2::after {
 .service-card h3, .category h3 {
     margin-bottom: 1rem;
     font-size: 1.3rem;
-    color: #5a2d8c;
+    color: #5c132e;
 }
 
 .service-card p, .category p {
     color: #666;
-}
-
-/* Clients Section */
-.clients {
-    background: linear-gradient(135deg, #f5f0ff 0%, #ffffff 100%);
 }
 
 /* Portfolio */
@@ -310,8 +305,8 @@ section h2::after {
 
 .portfolio-item:hover {
     transform: translateY(-5px) scale(1.02);
-    background: linear-gradient(135deg, #ff6b9d20, #ffd70020);
-    box-shadow: 0 15px 30px rgba(255,107,157,0.2);
+    background: linear-gradient(135deg, #d4af3710, #b8962c10);
+    box-shadow: 0 15px 30px rgba(212,175,55,0.2);
 }
 
 .placeholder-icon {
@@ -319,9 +314,9 @@ section h2::after {
     margin-bottom: 0.5rem;
 }
 
-/* Why Us */
+/* Why Us - Burgundy Background */
 .why-us {
-    background: linear-gradient(135deg, #5a2d8c 0%, #3a1c61 100%);
+    background: linear-gradient(135deg, #5c132e 0%, #3a0b1d 100%);
     color: white;
 }
 
@@ -330,7 +325,7 @@ section h2::after {
 }
 
 .why-us h2::after {
-    background: linear-gradient(90deg, #ff6b9d, #ffd700);
+    background: linear-gradient(90deg, #d4af37, #b8962c);
 }
 
 .features {
@@ -342,13 +337,13 @@ section h2::after {
 .feature {
     text-align: center;
     padding: 1.5rem;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.08);
     border-radius: 20px;
     transition: all 0.3s;
 }
 
 .feature:hover {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.15);
     transform: translateY(-5px);
 }
 
@@ -370,9 +365,10 @@ section h2::after {
 }
 
 .contact-info {
-    background: linear-gradient(135deg, #667eea10, #764ba210);
+    background: linear-gradient(135deg, #5c132e08, #3a0b1d08);
     padding: 2rem;
     border-radius: 20px;
+    border: 1px solid rgba(212,175,55,0.3);
 }
 
 .contact-info p {
@@ -381,25 +377,26 @@ section h2::after {
 }
 
 .contact-info a {
-    color: #ff6b9d;
+    color: #d4af37;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .contact-info a:hover {
-    color: #ffd700;
+    color: #b8962c;
 }
 
 .contact-form {
     background: white;
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(92,19,46,0.1);
+    border: 1px solid rgba(212,175,55,0.3);
 }
 
 .contact-form h3 {
     margin-bottom: 1rem;
-    color: #5a2d8c;
+    color: #5c132e;
 }
 
 .contact-form input,
@@ -418,8 +415,8 @@ section h2::after {
 .contact-form select:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #ff6b9d;
-    box-shadow: 0 0 0 3px rgba(255,107,157,0.1);
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.1);
 }
 
 .contact-form button {
@@ -434,9 +431,9 @@ section h2::after {
     margin-top: 1rem;
 }
 
-/* Footer */
+/* Footer - Burgundy */
 footer {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(135deg, #1a0a14 0%, #0d050a 100%);
     color: #ccc;
     padding: 3rem 0 1rem;
 }
@@ -449,7 +446,7 @@ footer {
 }
 
 .footer-section h4 {
-    color: #ff6b9d;
+    color: #d4af37;
     margin-bottom: 1rem;
 }
 
@@ -468,7 +465,7 @@ footer {
 }
 
 .footer-section a:hover {
-    color: #ffd700;
+    color: #d4af37;
 }
 
 .footer-bottom {
