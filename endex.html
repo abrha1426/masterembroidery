@@ -222,6 +222,7 @@
                         <p><strong>📱 WhatsApp:</strong><br><a href="https://wa.me/251955664955">+251-955-664-955 (Click to Chat)</a></p>
                     </div>
                     
+                    <!-- IMPORTANT: Change "youremail@gmail.com" to YOUR real email address -->
                     <form class="contact-form" action="https://formsubmit.co/youremail@gmail.com" method="POST">
                         <input type="text" name="_honey" style="display:none">
                         <input type="hidden" name="_next" value="https://mastermbroidery.onrender.com">
@@ -288,6 +289,7 @@
     </div>
 
     <script>
+        // Lightbox functionality
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.querySelector('.close');
@@ -307,6 +309,20 @@
             if (e.target === lightbox) {
                 lightbox.style.display = 'none';
             }
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a, .hero-buttons a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
         });
     </script>
 </body>
