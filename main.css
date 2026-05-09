@@ -18,7 +18,7 @@ body {
     padding: 0 20px;
 }
 
-/* Header - Burgundy Theme */
+/* Header */
 header {
     background: linear-gradient(135deg, #5c132e 0%, #3a0b1d 100%);
     color: white;
@@ -36,7 +36,6 @@ header .container {
     flex-wrap: wrap;
 }
 
-/* CIRCLE LOGO */
 .logo {
     display: flex;
     align-items: center;
@@ -55,10 +54,8 @@ header .container {
 .logo-img:hover {
     transform: scale(1.08);
     border-color: #c9a02e;
-    box-shadow: 0 0 30px rgba(212,175,55,0.5);
 }
 
-/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
@@ -123,34 +120,19 @@ nav a:hover {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
-    animation: fadeInUp 0.8s ease;
 }
 
 .hero h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    animation: fadeInUp 1s ease;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    opacity: 0.95;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    animation: fadeInUp 1.2s ease;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .hero-buttons {
@@ -158,7 +140,6 @@ nav a:hover {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    animation: fadeInUp 1.4s ease;
 }
 
 /* Buttons */
@@ -205,7 +186,6 @@ nav a:hover {
 .btn-primary:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px rgba(212,175,55,0.6);
-    color: #2c081c;
 }
 
 .btn-whatsapp {
@@ -249,10 +229,10 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* Services Grid */
+/* Service Grid */
 .service-grid, .client-categories {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
@@ -278,7 +258,7 @@ section h2::after {
 }
 
 .service-card h3, .category h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-size: 1.3rem;
     color: #5c132e;
 }
@@ -324,6 +304,12 @@ section h2::after {
     font-size: 2rem;
     display: block;
     margin-bottom: 0.5rem;
+}
+
+.feature h3 {
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
 }
 
 /* Contact */
@@ -394,7 +380,6 @@ section h2::after {
 
 .contact-form button {
     width: 100%;
-    margin-top: 0.5rem;
 }
 
 .form-note {
@@ -450,7 +435,7 @@ footer {
 }
 
 /* ========================================
-   PORTFOLIO GALLERY STYLES - PERFECT ALIGNMENT
+   PROFESSIONAL PORTFOLIO GALLERY
    ======================================== */
 
 .portfolio {
@@ -464,6 +449,7 @@ footer {
     font-size: 1.1rem;
 }
 
+/* PROFESSIONAL GRID - PERFECT SQUARES */
 .portfolio-gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -471,35 +457,40 @@ footer {
     padding: 1rem 0;
 }
 
-/* Perfect square images - all same size and alignment */
+/* Each image container - PERFECT SQUARE */
 .gallery-item {
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     cursor: pointer;
-    background: #2c081c;
+    background-color: #2c081c;
+    /* This makes the container a perfect square */
     aspect-ratio: 1 / 1;
+    width: 100%;
 }
 
+/* Image fills the square perfectly */
 .gallery-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
     display: block;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Zoom effect on hover */
 .gallery-item:hover .gallery-img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
+/* Overlay that slides up from bottom */
 .gallery-overlay {
     position: absolute;
     bottom: -100%;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, #5c132ecc, #3a0b1dcc);
+    background: linear-gradient(to top, #5c132e, #3a0b1d);
     color: #d4af37;
     text-align: center;
     padding: 1rem;
@@ -511,8 +502,9 @@ footer {
 }
 
 .gallery-overlay span {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 /* Lightbox Modal */
@@ -531,11 +523,12 @@ footer {
 }
 
 .lightbox-content {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 85%;
+    max-height: 85%;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 8px;
     border: 3px solid #d4af37;
+    box-shadow: 0 0 50px rgba(212,175,55,0.3);
 }
 
 .close {
@@ -553,14 +546,23 @@ footer {
     color: white;
 }
 
-/* Responsive Gallery */
-@media (max-width: 1024px) {
+/* Desktop: 4 columns - Perfect squares */
+@media (min-width: 1200px) {
+    .portfolio-gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Tablet: 3 columns */
+@media (max-width: 1024px) and (min-width: 769px) {
     .portfolio-gallery {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.2rem;
     }
 }
 
+/* Mobile Landscape: 2 columns */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
@@ -605,6 +607,11 @@ footer {
     
     .gallery-overlay span {
         font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+    
+    .gallery-overlay {
+        padding: 0.5rem;
     }
     
     .lightbox-content {
@@ -613,9 +620,15 @@ footer {
     }
 }
 
+/* Mobile Portrait: 1 column */
 @media (max-width: 480px) {
     .portfolio-gallery {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+    
+    .gallery-item {
+        max-width: 350px;
+        margin: 0 auto;
     }
 }
