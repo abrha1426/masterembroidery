@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Master Embroidery | Premium Embroidery Services in Addis Ababa, Ethiopia</title>
     <meta name="description" content="Professional embroidery factory in Addis Ababa, Ethiopia. Custom embroidered logos, brand names, and designs for schools, construction companies, garment manufacturers, and organizations.">
     <link rel="stylesheet" href="main.css">
@@ -14,7 +14,9 @@
             <div class="logo">
                 <img src="logo.jpg" alt="Master Embroidery Logo" class="logo-img">
             </div>
-            <nav>
+            <!-- Mobile menu button -->
+            <div class="mobile-menu-btn" id="mobileMenuBtn">☰</div>
+            <nav id="mainNav">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
@@ -133,7 +135,10 @@
                 <div class="contact-grid">
                     <div class="contact-info">
                         <p><strong>📍 Address:</strong><br>Master Embroidery PLC<br>Saris, Addis Ababa, Ethiopia</p>
-                        <p><strong>📞 Phone:</strong><br><a href="tel:+251982168282">+251-982-168282</a><br><a href="tel:+251988772594">+251-988-772-594</a></p>
+                        <p><strong>📞 Phone:</strong><br>
+                            <a href="tel:+251982168282">📱 +251-982-168282</a><br>
+                            <a href="tel:+251988772594">📱 +251-988-772-594</a>
+                        </p>
                         <p><strong>✉️ Email:</strong><br><a href="mailto:info@masterembroidery.com">info@masterembroidery.com</a></p>
                         <p><strong>🕒 Hours:</strong><br>Mon-Fri: 8:30 AM - 6:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
                     </div>
@@ -183,9 +188,9 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>📞 +251-982-168282</p>
-                    <p>📞 +251-988-772-594</p>
-                    <p>✉️ info@masterembroidery.com</p>
+                    <p><a href="tel:+251982168282">📞 +251-982-168282</a></p>
+                    <p><a href="tel:+251988772594">📞 +251-988-772-594</a></p>
+                    <p><a href="mailto:info@masterembroidery.com">✉️ info@masterembroidery.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -201,6 +206,21 @@
     </div>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('show');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('show');
+            });
+        });
+
         const portfolioImages = [
             { src: "1.jpeg", title: "Custom Logo Embroidery" },
             { src: "2.png", title: "School Uniform Embroidery" },
@@ -235,6 +255,7 @@
                 img.src = image.src;
                 img.alt = image.title;
                 img.className = 'gallery-img';
+                img.loading = 'lazy';
                 
                 const overlay = document.createElement('div');
                 overlay.className = 'gallery-overlay';
