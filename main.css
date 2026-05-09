@@ -16,7 +16,7 @@ body {
     position: relative;
 }
 
-/* WHITE OVERLAY - Clean and bright */
+/* BLUE OVERLAY - Dark enough to contrast with white background */
 body::before {
     content: '';
     position: fixed;
@@ -24,7 +24,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(25, 80, 160, 0.75);
     z-index: -1;
 }
 
@@ -34,17 +34,16 @@ body::before {
     padding: 0 16px;
 }
 
-/* Header - White with Blue Accent */
+/* Header - Solid Blue */
 header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    color: #1a2a6c;
+    background: #1a4a8a;
+    color: white;
     padding: 0.8rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 3px solid #1e3c72;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    border-bottom: 2px solid #ffd700;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 header .container {
@@ -67,20 +66,20 @@ header .container {
     height: 55px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid #1e3c72;
-    box-shadow: 0 0 20px rgba(30, 60, 114, 0.2);
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
     transition: all 0.3s;
 }
 
 .logo-img:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(30, 60, 114, 0.4);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
 }
 
 .logo-text {
     font-size: 1.2rem;
     font-weight: 800;
-    color: #1e3c72;
+    color: white;
     letter-spacing: 1px;
 }
 
@@ -88,7 +87,7 @@ header .container {
     display: none;
     font-size: 28px;
     cursor: pointer;
-    color: #1e3c72;
+    color: white;
     padding: 8px 12px;
 }
 
@@ -99,7 +98,7 @@ nav ul {
 }
 
 nav a {
-    color: #1e3c72;
+    color: white;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s;
@@ -114,7 +113,7 @@ nav a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background: #1e3c72;
+    background: #ffd700;
     transition: width 0.3s;
 }
 
@@ -123,7 +122,7 @@ nav a:hover::after {
 }
 
 nav a:hover {
-    color: #2a5298;
+    color: #ffd700;
 }
 
 /* Hero Section */
@@ -132,7 +131,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     text-align: center;
-    color: #1e3c72;
+    color: white;
     position: relative;
 }
 
@@ -143,28 +142,25 @@ nav a:hover {
 
 .hero-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: rgba(255, 215, 0, 0.2);
     padding: 0.3rem 1rem;
     border-radius: 50px;
     font-size: 0.8rem;
     margin-bottom: 1rem;
-    color: white;
-    font-weight: 600;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: #ffd700;
 }
 
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #1e3c72, #2a5298, #4a90e2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: white;
 }
 
 .hero h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #2a5298;
+    color: #ffd700;
 }
 
 .hero p {
@@ -173,10 +169,10 @@ nav a:hover {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    color: #4a5568;
+    color: rgba(255,255,255,0.9);
 }
 
-/* Buttons */
+/* Buttons - ALL BLUE */
 .btn {
     display: inline-block;
     padding: 0.9rem 2rem;
@@ -190,14 +186,15 @@ nav a:hover {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #1a4a8a, #0d2e5a);
     color: white;
-    box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3);
+    box-shadow: 0 4px 15px rgba(26, 74, 138, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(30, 60, 114, 0.4);
+    background: linear-gradient(135deg, #2a5a9a, #1a3a6a);
+    box-shadow: 0 8px 25px rgba(26, 74, 138, 0.5);
 }
 
 .btn-whatsapp {
@@ -219,7 +216,7 @@ nav a:hover {
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: #1e3c72;
+    color: white;
     margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
@@ -233,29 +230,28 @@ nav a:hover {
     transform: translateX(-50%);
     width: 70px;
     height: 3px;
-    background: linear-gradient(90deg, #1e3c72, #4a90e2);
+    background: #ffd700;
     border-radius: 2px;
 }
 
 .section-header p {
-    color: #4a5568;
+    color: rgba(255,255,255,0.8);
     font-size: 1.1rem;
 }
 
-/* Sections - White Cards */
+/* Sections - Blue Transparent */
 section {
     padding: 4rem 0;
 }
 
 .services, .clients, .portfolio, .contact {
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(26, 74, 138, 0.65);
     backdrop-filter: blur(5px);
     margin: 1rem 0;
     border-radius: 30px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
 }
 
-/* Service Cards - White with Blue Hover */
+/* Service Cards - Blue with White Text */
 .service-grid, .client-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -263,19 +259,20 @@ section {
 }
 
 .service-card, .category {
-    background: white;
+    background: rgba(26, 74, 138, 0.85);
+    backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 20px;
     text-align: center;
     transition: all 0.3s;
-    border: 1px solid rgba(30, 60, 114, 0.1);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    border: 1px solid rgba(255, 215, 0, 0.2);
 }
 
 .service-card:hover, .category:hover {
     transform: translateY(-10px);
-    border-color: #1e3c72;
-    box-shadow: 0 20px 40px rgba(30, 60, 114, 0.15);
+    background: rgba(26, 74, 138, 0.95);
+    border-color: #ffd700;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .service-icon, .category-icon {
@@ -286,17 +283,17 @@ section {
 .service-card h3, .category h3 {
     margin-bottom: 0.8rem;
     font-size: 1.3rem;
-    color: #1e3c72;
+    color: #ffd700;
 }
 
 .service-card p, .category p {
-    color: #4a5568;
+    color: rgba(255,255,255,0.85);
     font-size: 0.9rem;
 }
 
-/* Stats Section - Blue Gradient */
+/* Stats Section - Dark Blue */
 .stats {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: #0d2e5a;
     border-radius: 30px;
     margin: 1rem 0;
 }
@@ -311,7 +308,7 @@ section {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: white;
+    color: #ffd700;
     margin-bottom: 0.3rem;
 }
 
@@ -320,7 +317,7 @@ section {
     font-size: 0.9rem;
 }
 
-/* Features - White Cards */
+/* Features - Blue Cards */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -330,16 +327,16 @@ section {
 .feature {
     text-align: center;
     padding: 1.5rem;
-    background: white;
+    background: rgba(26, 74, 138, 0.8);
     border-radius: 20px;
     transition: all 0.3s;
-    border: 1px solid rgba(30, 60, 114, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.15);
 }
 
 .feature:hover {
+    background: rgba(26, 74, 138, 0.95);
     transform: translateY(-5px);
-    border-color: #1e3c72;
-    box-shadow: 0 10px 30px rgba(30, 60, 114, 0.1);
+    border-color: #ffd700;
 }
 
 .feature-icon {
@@ -349,13 +346,13 @@ section {
 }
 
 .feature h3 {
-    color: #1e3c72;
+    color: #ffd700;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 
 .feature p {
-    color: #4a5568;
+    color: rgba(255,255,255,0.85);
     font-size: 0.85rem;
 }
 
@@ -367,10 +364,9 @@ section {
 }
 
 .contact-info {
-    background: white;
+    background: rgba(26, 74, 138, 0.8);
     padding: 2rem;
     border-radius: 20px;
-    border: 1px solid rgba(30, 60, 114, 0.1);
 }
 
 .info-item {
@@ -385,30 +381,29 @@ section {
 }
 
 .info-item h4 {
-    color: #1e3c72;
+    color: #ffd700;
     margin-bottom: 0.3rem;
     font-size: 1rem;
 }
 
 .info-item p, .info-item a {
-    color: #4a5568;
+    color: rgba(255,255,255,0.85);
     text-decoration: none;
     font-size: 0.9rem;
 }
 
 .info-item a:hover {
-    color: #2a5298;
+    color: #ffd700;
 }
 
 .contact-form {
-    background: white;
+    background: rgba(26, 74, 138, 0.8);
     padding: 2rem;
     border-radius: 20px;
-    border: 1px solid rgba(30, 60, 114, 0.1);
 }
 
 .contact-form h3 {
-    color: #1e3c72;
+    color: #ffd700;
     margin-bottom: 1.2rem;
     font-size: 1.3rem;
 }
@@ -419,41 +414,40 @@ section {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(255, 215, 0, 0.3);
     border-radius: 12px;
-    background: #f8fafc;
-    color: #1e3c72;
+    background: rgba(255,255,255,0.15);
+    color: white;
     font-family: inherit;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: #94a3b8;
+    color: rgba(255,255,255,0.6);
 }
 
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #1e3c72;
-    box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
+    border-color: #ffd700;
 }
 
 .contact-form select option {
-    background: white;
-    color: #1e3c72;
+    background: #1a4a8a;
+    color: white;
 }
 
 .form-note {
     text-align: center;
     margin-top: 1rem;
     font-size: 0.8rem;
-    color: #4a5568;
+    color: rgba(255,255,255,0.7);
 }
 
-/* Footer - Blue Gradient */
+/* Footer - Dark Blue */
 footer {
-    background: linear-gradient(135deg, #1e3c72, #0f2748);
+    background: #0d2e5a;
     color: #cbd5e1;
     padding: 2rem 0 1rem;
     margin-top: 2rem;
@@ -467,7 +461,7 @@ footer {
 }
 
 .footer-section h4 {
-    color: white;
+    color: #ffd700;
     margin-bottom: 0.8rem;
 }
 
@@ -482,7 +476,7 @@ footer {
 }
 
 .footer-section a:hover {
-    color: white;
+    color: #ffd700;
 }
 
 .footer-bottom {
@@ -509,7 +503,7 @@ footer {
     border-radius: 15px;
     cursor: pointer;
     aspect-ratio: 1 / 1;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .gallery-img {
@@ -528,8 +522,8 @@ footer {
     bottom: -100%;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(30, 60, 114, 0.95), transparent);
-    color: white;
+    background: linear-gradient(to top, rgba(13, 46, 90, 0.95), transparent);
+    color: #ffd700;
     text-align: center;
     padding: 0.8rem;
     transition: bottom 0.3s;
@@ -559,20 +553,20 @@ footer {
     max-height: 85%;
     object-fit: contain;
     border-radius: 8px;
-    border: 2px solid white;
+    border: 2px solid #ffd700;
 }
 
 .close {
     position: absolute;
     top: 20px;
     right: 30px;
-    color: white;
+    color: #ffd700;
     font-size: 40px;
     cursor: pointer;
 }
 
 .close:hover {
-    color: #4a90e2;
+    color: white;
 }
 
 /* Mobile Responsive */
@@ -586,11 +580,10 @@ footer {
         top: 100%;
         left: 0;
         right: 0;
-        background: white;
+        background: #1a4a8a;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
     
     nav.show {
@@ -610,7 +603,6 @@ footer {
     nav ul li a {
         display: block;
         padding: 12px;
-        color: #1e3c72;
     }
     
     .logo-img {
