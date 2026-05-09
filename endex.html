@@ -14,7 +14,6 @@
             <div class="logo">
                 <img src="logo.jpg" alt="Master Embroidery Logo" class="logo-img">
             </div>
-            <!-- Mobile menu button -->
             <div class="mobile-menu-btn" id="mobileMenuBtn">☰</div>
             <nav id="mainNav">
                 <ul>
@@ -30,6 +29,7 @@
 
     <main>
         <section id="home" class="hero">
+            <div class="hero-overlay"></div>
             <div class="container">
                 <h1>Premium Embroidery Services</h1>
                 <h2>in Addis Ababa, Ethiopia</h2>
@@ -41,7 +41,7 @@
             </div>
         </section>
 
-        <section id="services" class="services">
+        <section id="services" class="services glass-card">
             <div class="container">
                 <h2>Our Embroidery Services</h2>
                 <div class="service-grid">
@@ -79,7 +79,7 @@
             </div>
         </section>
 
-        <section id="clients" class="clients">
+        <section id="clients" class="clients glass-card">
             <div class="container">
                 <h2>Who We Serve</h2>
                 <div class="client-categories">
@@ -103,19 +103,15 @@
             </div>
         </section>
 
-        <!-- PROFESSIONAL PORTFOLIO SECTION -->
-        <section id="portfolio" class="portfolio" style="display: none;">
+        <section id="portfolio" class="portfolio glass-card" style="display: none;">
             <div class="container">
                 <h2>Our Embroidery Portfolio</h2>
                 <p class="portfolio-subtitle">Professional embroidery work for our valued clients</p>
-                
-                <div class="portfolio-gallery" id="portfolioGallery">
-                    <!-- Images loaded dynamically -->
-                </div>
+                <div class="portfolio-gallery" id="portfolioGallery"></div>
             </div>
         </section>
 
-        <section class="why-us">
+        <section class="why-us glass-card">
             <div class="container">
                 <h2>Why Choose Master Embroidery?</h2>
                 <div class="features">
@@ -129,7 +125,7 @@
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="contact" class="contact glass-card">
             <div class="container">
                 <h2>Contact Our Factory</h2>
                 <div class="contact-grid">
@@ -206,7 +202,6 @@
     </div>
 
     <script>
-        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainNav = document.getElementById('mainNav');
         
@@ -214,7 +209,6 @@
             mainNav.classList.toggle('show');
         });
 
-        // Close mobile menu when a link is clicked
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 mainNav.classList.remove('show');
@@ -226,16 +220,16 @@
             { src: "2.png", title: "School Uniform Embroidery" },
             { src: "3.png", title: "Corporate Branding" },
             { src: "4.jpeg", title: "Construction Workwear" },
-            { src: "5.jpeg", title: "Sports Team Logo" },
-            { src: "6.jpeg", title: "Custom Design" },
-            { src: "7.jpeg", title: "Jacket Embroidery" },
-            { src: "8.jpeg", title: "Cap Embroidery" },
-            { src: "9.png", title: "Bag Embroidery" },
-            { src: "10.jpeg", title: "Polo Shirt Logo" },
-            { src: "11.png", title: "Team Uniform" },
-            { src: "12.png", title: "Workwear Embroidery" },
-            { src: "13.png", title: "Corporate Gift" },
-            { src: "14.jpeg", title: "Custom Order" }
+            { src: "5.jpeg", title: "Custom Design" },
+            { src: "6.jpeg", title: "Jacket Embroidery" },
+            { src: "7.jpeg", title: "Cap Embroidery" },
+            { src: "8.jpeg", title: "Bag Embroidery" },
+            { src: "9.png", title: "Polo Shirt Logo" },
+            { src: "10.jpeg", title: "Team Uniform" },
+            { src: "11.png", title: "Workwear Embroidery" },
+            { src: "12.png", title: "Corporate Gift" },
+            { src: "13.png", title: "Custom Order" },
+            { src: "14.jpeg", title: "Embroidery Work" }
         ];
 
         let portfolioLoaded = false;
@@ -250,17 +244,14 @@
             portfolioImages.forEach(image => {
                 const item = document.createElement('div');
                 item.className = 'gallery-item';
-                
                 const img = document.createElement('img');
                 img.src = image.src;
                 img.alt = image.title;
                 img.className = 'gallery-img';
                 img.loading = 'lazy';
-                
                 const overlay = document.createElement('div');
                 overlay.className = 'gallery-overlay';
                 overlay.innerHTML = `<span>${image.title}</span>`;
-                
                 item.appendChild(img);
                 item.appendChild(overlay);
                 gallery.appendChild(item);
