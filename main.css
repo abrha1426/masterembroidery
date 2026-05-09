@@ -36,7 +36,7 @@ header .container {
     flex-wrap: wrap;
 }
 
-/* CIRCLE LOGO - Burgundy Borders */
+/* CIRCLE LOGO */
 .logo {
     display: flex;
     align-items: center;
@@ -72,6 +72,7 @@ nav a {
     transition: all 0.3s;
     padding: 5px 0;
     position: relative;
+    cursor: pointer;
 }
 
 nav a::after {
@@ -93,7 +94,7 @@ nav a:hover {
     color: #d4af37;
 }
 
-/* Hero Section - Burgundy Gradient */
+/* Hero Section */
 .hero {
     background: linear-gradient(135deg, #801b3a 0%, #4a0e2e 50%, #2c081c 100%);
     color: white;
@@ -160,7 +161,7 @@ nav a:hover {
     animation: fadeInUp 1.4s ease;
 }
 
-/* ATTRACTIVE BUTTONS - Burgundy Theme */
+/* Buttons */
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
@@ -286,35 +287,7 @@ section h2::after {
     color: #666;
 }
 
-/* Portfolio */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    text-align: center;
-}
-
-.portfolio-item {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 20px;
-    transition: all 0.3s;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.portfolio-item:hover {
-    transform: translateY(-5px) scale(1.02);
-    background: linear-gradient(135deg, #d4af3710, #b8962c10);
-    box-shadow: 0 15px 30px rgba(212,175,55,0.2);
-}
-
-.placeholder-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Why Us - Burgundy Background */
+/* Why Us */
 .why-us {
     background: linear-gradient(135deg, #5c132e 0%, #3a0b1d 100%);
     color: white;
@@ -431,7 +404,7 @@ section h2::after {
     margin-top: 1rem;
 }
 
-/* Footer - Burgundy */
+/* Footer */
 footer {
     background: linear-gradient(135deg, #1a0a14 0%, #0d050a 100%);
     color: #ccc;
@@ -462,6 +435,7 @@ footer {
     color: #ccc;
     text-decoration: none;
     transition: color 0.3s;
+    cursor: pointer;
 }
 
 .footer-section a:hover {
@@ -475,7 +449,118 @@ footer {
     font-size: 0.85rem;
 }
 
-/* Responsive */
+/* ========================================
+   PORTFOLIO GALLERY STYLES - PERFECT ALIGNMENT
+   ======================================== */
+
+.portfolio {
+    display: none;
+}
+
+.portfolio-subtitle {
+    text-align: center;
+    color: #b8962c;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+/* Perfect square images - all same size and alignment */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    background: #2c081c;
+    aspect-ratio: 1 / 1;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #5c132ecc, #3a0b1dcc);
+    color: #d4af37;
+    text-align: center;
+    padding: 1rem;
+    transition: bottom 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    bottom: 0;
+}
+
+.gallery-overlay span {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Lightbox Modal */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 3px solid #d4af37;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #d4af37;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: white;
+}
+
+/* Responsive Gallery */
+@media (max-width: 1024px) {
+    .portfolio-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+    }
+}
+
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
@@ -511,5 +596,26 @@ footer {
 
     section h2 {
         font-size: 1.8rem;
+    }
+
+    .portfolio-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .gallery-overlay span {
+        font-size: 0.7rem;
+    }
+    
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
