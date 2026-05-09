@@ -10,9 +10,10 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-    <img src="logo" alt="Master Embroidery Logo" class="logo-img">
-</div>>
+        <div class="container">
+            <div class="logo">
+                <img src="logo" alt="Master Embroidery Logo" class="logo-img">
+            </div>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -176,7 +177,7 @@
                     <div class="contact-info">
                         <p><strong>📍 Factory Address:</strong><br>
                         Master Embroidery PLC<br>
-                        Saris Addey Abeba, Addis Ababa, Ethiopia</p>
+                        Saris, Addis Ababa, Ethiopia</p>
                         
                         <p><strong>📞 Phone:</strong><br>
                         +251-982-168282</p>
@@ -192,33 +193,22 @@
                         +251-955-664-955 (for quick quotes)</p>
                     </div>
                     
-                    <!-- UPDATED FORM WITH EMAIL SENDING CAPABILITY -->
-                    <!-- IMPORTANT: Replace YOUR_EMAIL_HERE with your actual email address -->
-                    <form class="contact-form" action="https://formsubmit.co/" method="POST">
-                        <!-- Anti-spam honeypot (do not remove) -->
+                    <!-- IMPORTANT: Replace "youremail@gmail.com" with your actual email address -->
+                    <form class="contact-form" action="https://formsubmit.co/youremail@gmail.com" method="POST">
                         <input type="text" name="_honey" style="display:none">
-                        
-                        <!-- Redirect to a thank you page after submission (optional) -->
-                        <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
-                        
-                        <!-- Email subject so you know it's from your website -->
+                        <input type="hidden" name="_next" value="https://mastermbroidery.onrender.com">
                         <input type="hidden" name="_subject" value="🔔 NEW Embroidery Quote Request - Master Embroidery">
-                        
-                        <!-- Disable captcha for smoother experience (optional) -->
                         <input type="hidden" name="_captcha" value="false">
                         
                         <h3>Request a Quote</h3>
                         
                         <input type="text" name="Name / Organization" placeholder="Your Name / Organization" required>
-                        
                         <input type="email" name="Email Address" placeholder="Email Address" required>
-                        
                         <input type="tel" name="Phone Number" placeholder="Phone Number (preferably with Telegram/WhatsApp)">
                         
                         <select name="Service Needed" required>
                             <option value="">I need embroidery for...</option>
-                          
-                          <option>School Uniforms</option>
+                            <option>School Uniforms</option>
                             <option>Construction Workwear</option>
                             <option>Garment Manufacturing (Bulk)</option>
                             <option>Corporate Uniforms</option>
@@ -228,11 +218,9 @@
                         </select>
                         
                         <input type="text" name="Quantity" placeholder="Approximate quantity (e.g., 100 pieces)">
-                        
                         <textarea name="Message" rows="4" placeholder="Describe your logo/design and where you want it embroidered..."></textarea>
                         
                         <button type="submit" class="btn">Send Inquiry →</button>
-                        
                         <p class="form-note">✅ We'll receive your message instantly and respond within 24 hours.</p>
                     </form>
                 </div>
@@ -265,7 +253,5 @@
             </div>
         </div>
     </footer>
-
-    
 </body>
 </html>
