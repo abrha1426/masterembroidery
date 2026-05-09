@@ -19,7 +19,7 @@ body {
 
 /* Header */
 header {
-    background-color: #0c5c4b;  /* Ethiopian green-inspired */
+    background-color: #0c5c4b;
     color: white;
     padding: 1rem 0;
     position: sticky;
@@ -34,14 +34,26 @@ header .container {
     flex-wrap: wrap;
 }
 
-.logo h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
+/* CIRCLE LOGO STYLING */
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-.logo p {
-    font-size: 0.85rem;
-    opacity: 0.9;
+.logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #f5a623;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+    border-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 nav ul {
@@ -297,6 +309,11 @@ footer {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
+    }
+
+    .logo-img {
+        width: 45px;
+        height: 45px;
     }
 
     nav ul {
