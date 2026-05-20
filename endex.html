@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Master Embroidery | Premium Embroidery Services in Addis Ababa, Ethiopia</title>
     <meta name="description" content="Professional embroidery factory in Addis Ababa, Ethiopia. Custom embroidered logos, brand names, and designs for schools, construction companies, garment manufacturers, and organizations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -38,7 +41,7 @@
                     <p>Custom embroidered logos, brand names, and designs for schools, construction companies, garment factories, and organizations.</p>
                     <div class="hero-buttons">
                         <a href="#contact" class="btn btn-primary">Request a Quote →</a>
-                        <a href="https://wa.me/251982168282" class="btn btn-whatsapp" target="_blank">📱 WhatsApp Us</a>
+                        <a href="https://wa.me/251982168282" class="btn btn-whatsapp" target="_blank" rel="noopener">📱 WhatsApp Us</a>
                     </div>
                 </div>
             </div>
@@ -116,7 +119,7 @@
             </div>
         </section>
 
-        <section id="portfolio" class="portfolio" style="display: none;">
+        <section id="portfolio" class="portfolio">
             <div class="container">
                 <div class="section-header">
                     <h2>Our Embroidery Portfolio</h2>
@@ -228,10 +231,10 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <form class="contact-form" action="https://formsubmit.co/youremail@gmail.com" method="POST">
                         <input type="text" name="_honey" style="display:none">
-                        <input type="hidden" name="_next" value="https://mastermbroidery.onrender.com">
+                        <input type="hidden" name="_next" value="https://YOUR-GITHUB-PAGES-LINK">
                         <input type="hidden" name="_subject" value="🔔 NEW Embroidery Quote Request">
                         <input type="hidden" name="_captcha" value="false">
                         <h3>Request a Quote</h3>
@@ -288,13 +291,13 @@
 
     <div id="lightbox" class="lightbox">
         <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+        <img class="lightbox-content" id="lightbox-img" alt="Portfolio preview">
     </div>
 
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainNav = document.getElementById('mainNav');
-        
+
         mobileMenuBtn.addEventListener('click', function() {
             mainNav.classList.toggle('show');
         });
@@ -328,25 +331,28 @@
             if (portfolioLoaded) return;
             const gallery = document.getElementById('portfolioGallery');
             if (!gallery) return;
-            
+
             gallery.innerHTML = '';
-            
+
             portfolioImages.forEach(image => {
                 const item = document.createElement('div');
                 item.className = 'gallery-item';
+
                 const img = document.createElement('img');
                 img.src = image.src;
                 img.alt = image.title;
                 img.className = 'gallery-img';
                 img.loading = 'lazy';
+
                 const overlay = document.createElement('div');
                 overlay.className = 'gallery-overlay';
                 overlay.innerHTML = `<span>${image.title}</span>`;
+
                 item.appendChild(img);
                 item.appendChild(overlay);
                 gallery.appendChild(item);
             });
-            
+
             portfolioLoaded = true;
             attachLightbox();
         }
@@ -355,14 +361,15 @@
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const closeBtn = document.querySelector('.close');
-            
+
             document.querySelectorAll('.gallery-img').forEach(img => {
                 img.addEventListener('click', () => {
                     lightbox.style.display = 'flex';
                     lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
                 });
             });
-            
+
             closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
             lightbox.addEventListener('click', (e) => {
                 if (e.target === lightbox) lightbox.style.display = 'none';
@@ -382,7 +389,7 @@
             e.preventDefault();
             showPortfolio();
         });
-        
+
         document.getElementById('footerPortfolioLink')?.addEventListener('click', (e) => {
             e.preventDefault();
             showPortfolio();
