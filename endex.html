@@ -11,24 +11,33 @@
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-  <!-- Header with full‑width nav buttons -->
+  <!-- Header – top right fixed buttons -->
   <header>
     <div class="container">
       <div class="logo">
         <img src="logo.jpg" alt="Master Embroidery Logo" class="logo-img" />
         <span class="logo-text">MASTER EMBROIDERY</span>
       </div>
+      <!-- Top right nav buttons -->
+      <div class="top-nav">
+        <a href="#home" class="btn btn-top">Home</a>
+        <a href="#services" class="btn btn-top">Services</a>
+        <a href="#portfolio" id="portfolioLink" class="btn btn-top">Portfolio</a>
+        <a href="#contact" class="btn btn-top">Contact</a>
+      </div>
       <div class="mobile-menu-btn" id="mobileMenuBtn">☰</div>
-      <nav id="mainNav">
-        <ul>
-          <li><a href="#home" class="btn btn-nav">Home</a></li>
-          <li><a href="#services" class="btn btn-nav">Services</a></li>
-          <li><a href="#portfolio" id="portfolioLink" class="btn btn-nav">Portfolio</a></li>
-          <li><a href="#contact" class="btn btn-nav">Contact</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
+
+  <!-- Mobile nav overlay (optional) -->
+  <nav id="mobileNav">
+    <ul>
+      <li><a href="#home" class="btn">Home</a></li>
+      <li><a href="#services" class="btn">Services</a></li>
+      <li><a href="#portfolio" id="mpPortfolioLink" class="btn">Portfolio</a></li>
+      <li><a href="#contact" class="btn">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
@@ -341,127 +350,4 @@
       </div>
       <div class="footer-bottom">
         <p>
-          &copy; 2026 Master Embroidery – Addis Ababa, Ethiopia
-          <br />
-          <span class="flag">🇪🇹 Proudly Ethiopian | Saris, Addis Ababa</span>
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mainNav = document.getElementById('mainNav');
-
-    mobileMenuBtn.addEventListener('click', function () {
-      mainNav.classList.toggle('show');
-    });
-
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('show');
-      });
-    });
-
-    const portfolioImages = [
-      { src: "1.jpeg", title: "Custom Logo Embroidery" },
-      { src: "2.png", title: "School Uniform Embroidery" },
-      { src: "3.png", title: "Corporate Branding" },
-      { src: "4.jpeg", title: "Construction Workwear" },
-      { src: "5.jpeg", title: "Custom Design" },
-      { src: "6.jpeg", title: "Jacket Embroidery" },
-      { src: "7.jpeg", title: "Cap Embroidery" },
-      { src: "8.jpeg", title: "Bag Embroidery" },
-      { src: "9.png", title: "Polo Shirt Logo" },
-      { src: "10.jpeg", title: "Team Uniform" },
-      { src: "11.png", title: "Workwear Embroidery" },
-      { src: "12.png", title: "Corporate Gift" },
-      { src: "13.png", title: "Custom Order" },
-      { src: "14.jpeg", title: "Embroidery Work" }
-    ];
-
-    let portfolioLoaded = false;
-
-    function loadPortfolio() {
-      if (portfolioLoaded) return;
-      const gallery = document.getElementById('portfolioGallery');
-      if (!gallery) return;
-
-      gallery.innerHTML = '';
-
-      portfolioImages.forEach(image => {
-        const item = document.createElement('div');
-        item.className = 'gallery-item';
-        const img = document.createElement('img');
-        img.src = image.src;
-        img.alt = image.title;
-        img.className = 'gallery-img';
-        img.loading = 'lazy';
-        const overlay = document.createElement('div');
-        overlay.className = 'gallery-overlay';
-        overlay.innerHTML = `<span>${image.title}</span>`;
-        item.appendChild(img);
-        item.appendChild(overlay);
-        gallery.appendChild(item);
-      });
-
-      portfolioLoaded = true;
-      attachLightbox();
-    }
-
-    function attachLightbox() {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      const closeBtn = document.querySelector('.close');
-
-      document.querySelectorAll('.gallery-img').forEach(img => {
-        img.addEventListener('click', () => {
-          lightbox.style.display = 'flex';
-          lightboxImg.src = img.src;
-        });
-      });
-
-      closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) lightbox.style.display = 'none';
-      });
-    }
-
-    function showPortfolio() {
-      const portfolioSection = document.getElementById('portfolio');
-      if (portfolioSection) {
-        portfolioSection.style.display = 'block';
-        portfolioSection.scrollIntoView({ behavior: 'smooth' });
-        loadPortfolio();
-      }
-    }
-
-    document.getElementById('portfolioLink')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      showPortfolio();
-    });
-
-    document.getElementById('footerPortfolioLink')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      showPortfolio();
-    });
-
-    document.querySelectorAll('nav a:not(#portfolioLink), .hero-buttons a, .footer-section a:not(#footerPortfolioLink)').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href && href.startsWith('#')) {
-          e.preventDefault();
-          const target = document.querySelector(href);
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    document.getElementById('quoteForm')?.addEventListener('submit', function (e) {
-      e.preventDefault();
-      alert('Thank you for your inquiry. We will contact you within 24 hours.');
-      this.reset();
-    });
-  </script>
-</body>
-</html>
+          &copy; 
